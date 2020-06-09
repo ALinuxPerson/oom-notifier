@@ -36,11 +36,11 @@ class Configuration:
 
     @property
     def threshold(self) -> int:
-        return int(self.config["Main"]["threshold"])
+        return int(self.config["Main"].get("threshold", "1000"))
 
     @property
     def wait_time(self) -> int:
-        return int(self.config["Main"]["wait_time"])
+        return int(self.config["Main"].get("wait_time", "5"))
 
     def __repr__(self):
         return f"{self.__class__.__name__}('{self.config_directory}')"
