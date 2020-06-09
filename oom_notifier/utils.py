@@ -11,8 +11,6 @@ class Configuration:
             self.config_directory = self._config_location
         else:
             self.config_directory = config_directory
-        if not os.path.exists(self.config_directory):
-            pathlib.Path(self.config_directory).mkdir(parents=True, exist_ok=True)
         self.config.read(f"{self.config_directory}/config.ini")
 
     @property
