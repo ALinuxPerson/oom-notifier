@@ -37,3 +37,6 @@ class Configuration:
     @property
     def threshold(self) -> int:
         return int(self.config["Main"]["threshold"])
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}('{self.config_directory}')"
