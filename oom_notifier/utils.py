@@ -13,14 +13,7 @@ class Configuration:
             self.config_directory = config_directory
         if not os.path.exists(self.config_directory):
             pathlib.Path(self.config_directory).mkdir(parents=True, exist_ok=True)
-        try:
-            self.config.read(f"{self.config_directory}/config.ini")
-        except FileNotFoundError:
-            self.config.add_section("Main")
-            self.config["Main"]["threshold"] = "1000"
-            self.config["Main"]["wait_time"] = "5"
-            with open(f"{self.config_directory}/config.ini", "w") as config_file:
-                self.config.write(config_file)
+        self.config.read(f"{self.config_directory}/config.ini")
 
     @property
     def _config_location(self) -> str:
