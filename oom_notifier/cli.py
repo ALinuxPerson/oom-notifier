@@ -33,3 +33,7 @@ class Configuration:
         }
 
         return switch_case.get(os_platform, switch_case["Linux"])
+
+    @property
+    def threshold(self) -> int:
+        return int(self.config["Main"]["threshold"])
