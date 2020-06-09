@@ -1,5 +1,8 @@
+from oom_notifier import utils
 from typing import Dict, List
 import os
+
+__all__: List[str] = ["utils"]
 
 class OOM:
     def __init__(self, proc_path: str = "/proc"):
