@@ -14,7 +14,7 @@ from typing import List, Dict, IO
 
 # Package meta-data.
 NAME: str = "oom-notifier"
-DESCRIPTION: str = "A libray/program that gives information about oom scores."
+DESCRIPTION: str = "A library/program that gives information about oom scores."
 URL: str = "https://github.com/ALinuxPerson/oom-notifier"
 AUTHOR: str = "ALinuxPerson"
 REQUIRES_PYTHON: str = ">=3.6.0"
