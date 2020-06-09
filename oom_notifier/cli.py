@@ -15,8 +15,7 @@ class Configuration:
         if not os.path.exists(self.config_directory):
             pathlib.Path(self.config_directory).mkdir(parents=True, exist_ok=True)
         try:
-            with open(f"{self.config_directory}/config.ini", "r") as config_file:
-                self.config = self.config.read(config_file)
+            self.config.read(f"{self.config_directory}/config.ini")
         except FileNotFoundError:
             self.config.add_section("Main")
             self.config["Main"]["threshold"] = "1000"
