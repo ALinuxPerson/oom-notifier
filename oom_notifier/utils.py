@@ -18,6 +18,7 @@ class Configuration:
         except FileNotFoundError:
             self.config.add_section("Main")
             self.config["Main"]["threshold"] = "1000"
+            self.config["Main"]["wait_time"] = "5"
             with open(f"{self.config_directory}/config.ini", "w") as config_file:
                 self.config.write(config_file)
 
@@ -36,6 +37,10 @@ class Configuration:
     @property
     def threshold(self) -> int:
         return int(self.config["Main"]["threshold"])
+
+    @property
+    def wait_time(self) -> int:
+        return int(self.config["Main"]["wait_time"])
 
     def __repr__(self):
         return f"{self.__class__.__name__}('{self.config_directory}')"
