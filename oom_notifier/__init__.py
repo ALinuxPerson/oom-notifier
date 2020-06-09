@@ -23,7 +23,13 @@ class OOM:
 
     @property
     def max(self) -> Dict[str, int]:
-        pass
+        largest_score: int = max(self.info.values())
+        ret: Dict[str, int] = {"0": 0}
+        for pid, score in self.info.items():
+            if score == largest_score:
+                ret = {pid: score}
+
+        return ret
 
     def __repr__(self):
         return f"{self.__class__.__name__}('{self.proc_path}')"
