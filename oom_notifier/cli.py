@@ -1,13 +1,27 @@
 from typing import Dict
-import oom_notifier
+# import oom_notifier
 import configparser
 import platform
 import pathlib
 import os
 
 class Configuration:
-    def __init__(self, config_directory: str = ""):
-        pass
+    def __init__(self, config_directory: str = None):
+        self.config: configparser.ConfigParser = configparser.ConfigParser()
+        if config_directory is None:
+            self.config_directory = self._config_location
+        else:
+            self.config_directory = config_directory
+        if not os.path.exists(self.config_directory):
+            pathlib.Path(self.config_directory).mkdir(parents=True, exist_ok=True)
+        try:
+            with open(f"{self.config_directory}/config.ini", "r") as config_file:
+                self.config = self.config.read(config_file)
+        except FileNotFoundError:
+            self.config.add_section("Main")
+            self.config["Main"]["threshold"] = "1000"
+            with open(f"{self.config_directory}/config.ini", "w") as config_file:
+                self.config.write(config_file)
 
     @property
     def _config_location(self) -> str:
