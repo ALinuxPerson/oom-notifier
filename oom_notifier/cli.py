@@ -1,4 +1,6 @@
 from plyer import notification
+import oom_notifier
+import time
 import sys
 import os
 
@@ -16,3 +18,10 @@ def fork():
 
 def main():
     fork()
+    oom: oom_notifier.OOM = oom_notifier.OOM()
+    config: oom_notifier.utils.Configuration = oom_notifier.utils.Configuration()
+    while True:
+        pid, oom_score = tuple(oom.max.items())[0]
+        if oom_score > config.threshold:
+            notify(pid, oom_score, config.threshold)
+        time.sleep(config.wait_time)
