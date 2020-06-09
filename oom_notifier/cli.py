@@ -1,14 +1,23 @@
 from plyer import notification
+from typing import List
 import oom_notifier
+import subprocess
+import platform
 import time
 import sys
 import os
 
 def notify(pid: int, oom_score: int, threshold: int):
+    message: str = (f"PID {pid} which has an OOM score of {oom_score} has passed the threshold of {threshold} and will "
+                    f"likely be killed.")
+    if not os.environ.get("ENVIRON", None) and platform.system() == "Linux":
+        command: List[str] = ["wall"]
+        command.extend(message.split())
+        subprocess.call(command)
+        return
     notification.notify(
         title="Warning",
-        message=f"PID {pid} which has an OOM score of {oom_score} has passed the threshold of {threshold} and will "
-                f"likely be killed.",
+        message=message,
         app_name="OOM Notifier"
     )
 
