@@ -4,24 +4,10 @@ import platform
 import pathlib
 
 class Configuration:
-    def __init__(self, config_directory: str = None):
+    def __init__(self, config_directory: str = f"{str(pathlib.Path.home())}/.config/oom-notifier"):
         self.config: configparser.ConfigParser = configparser.ConfigParser()
-        if config_directory is None:
-            self.config_directory = self._config_location
-        else:
-            self.config_directory = config_directory
+        self.config_directory: str = config_directory
         self.config.read(f"{self.config_directory}/config.ini")
-
-    @property
-    def _config_location(self) -> str:
-        home_folder: str = str(pathlib.Path.home())
-        os_platform: str = platform.system()
-        switch_case: Dict[str, str] = {
-            "Linux": f"{home_folder}/.config/oom-notifier",
-            "Darwin": f"{home_folder}/Library/Preferences/oom-notifier"
-        }
-
-        return switch_case[os_platform]
 
     @property
     def config_dict(self) -> Dict[str, configparser.SectionProxy]:
