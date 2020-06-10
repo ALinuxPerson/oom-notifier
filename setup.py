@@ -18,7 +18,7 @@ DESCRIPTION: str = "A library/program that gives information about oom scores."
 URL: str = "https://github.com/ALinuxPerson/oom-notifier"
 AUTHOR: str = "ALinuxPerson"
 REQUIRES_PYTHON: str = ">=3.6.0"
-VERSION: str = "0.1.0"
+VERSION: str = ""
 
 # What packages are required for this module to be executed?
 REQUIRED: List[str] = [
