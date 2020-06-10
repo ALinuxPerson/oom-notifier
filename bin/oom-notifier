@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+
+import sys
+try:
+    from oom_notifier.cli import main
+except EnvironmentError as error:
+    sys.stderr.write(f"error: {error}")
+    sys.exit(2)
+
+if __name__ == '__main__':
+    sys.exit(main())

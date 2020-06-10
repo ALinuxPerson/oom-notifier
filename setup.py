@@ -107,9 +107,7 @@ setup(
     packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"]),
     # If your package is a single module, use this instead of 'packages':
     # py_modules=['mypackage'],
-    entry_points={
-        'console_scripts': ['oom-notifier=oom_notifier.cli:main'],
-    },
+    scripts=["bin/oom-notifier"],
     install_requires=REQUIRED,
     extras_require=EXTRAS,
     include_package_data=True,
