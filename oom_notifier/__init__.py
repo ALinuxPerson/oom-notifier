@@ -1,6 +1,10 @@
 from oom_notifier import utils
 from typing import Dict, List
+import platform
 import os
+
+if platform.system() not in ("Linux", "Darwin"):
+    raise EnvironmentError(f"unsupported operating system '{platform.system()}'")
 
 __all__: List[str] = ["utils"]
 

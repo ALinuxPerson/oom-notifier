@@ -21,10 +21,7 @@ class Configuration:
             "Darwin": f"{home_folder}/Library/Preferences/oom-notifier"
         }
 
-        try:
-            return switch_case[os_platform]
-        except KeyError:
-            raise EnvironmentError(f"{os_platform} is not compatible with oom-notifier") from None
+        return switch_case[os_platform]
 
     @property
     def config_dict(self) -> Dict[str, configparser.SectionProxy]:

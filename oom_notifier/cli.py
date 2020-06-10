@@ -1,10 +1,14 @@
 from plyer import notification
 from typing import List
-import oom_notifier
+import sys
+try:
+    import oom_notifier
+except EnvironmentError as error:
+    print(f"error: {error}")
+    sys.exit(2)
 import subprocess
 import platform
 import time
-import sys
 import os
 
 def notify(pid: int, oom_score: int, threshold: int):
