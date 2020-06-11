@@ -15,5 +15,5 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 from typing import Tuple
 
-VERSION: Tuple[int, ...] = (0, 30, 0)
+VERSION: Tuple[int, ...] = (0, 30, 1)
 __version__: str = '.'.join(map(str, VERSION))

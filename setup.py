@@ -44,13 +44,12 @@ try:
     with io.open(os.path.join(here, "README.md"), encoding="utf-8") as f:
         long_description: str = "\n" + f.read()
 except FileNotFoundError:
-    long_description: str = DESCRIPTION
+    long_description = DESCRIPTION
 
 # Load the package's __version__.py module as a dictionary.
 about: Dict[str, str] = {}
 if not VERSION:
     project_slug: str = NAME.lower().replace("-", "_").replace(" ", "_")
-    f: IO[str]
     with open(os.path.join(here, project_slug, "__version__.py")) as f:
         exec(f.read(), about)
 else:
