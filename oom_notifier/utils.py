@@ -7,10 +7,10 @@ class Configuration:
     def __init__(self, config_directory: str = f"{str(pathlib.Path.home())}/.config/oom-notifier"):
         self.config: configparser.ConfigParser = configparser.ConfigParser()
         self.config_directory: str = config_directory
-        self.config.read(f"{self.config_directory}/config.ini")
 
     @property
     def config_dict(self) -> Dict[str, configparser.SectionProxy]:
+        self.config.read(f"{self.config_directory}/config.ini")
         return dict(self.config.items())
 
     @property
