@@ -1,6 +1,6 @@
 from typing import Dict, Union
 import configparser
-import platform
+
 import pathlib
 
 class Configuration:
