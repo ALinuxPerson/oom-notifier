@@ -29,6 +29,7 @@ def main():
     fork()
     oom: oom_notifier.OOM = oom_notifier.OOM()
     config: oom_notifier.utils.Configuration = oom_notifier.utils.Configuration()
+    print("oom-notifier is now active and running in the background!")
     while True:
         pid, oom_score = tuple(oom.max.items())[0]
         if oom_score > config.threshold:
