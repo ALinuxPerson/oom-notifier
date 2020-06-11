@@ -14,7 +14,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![HitCount](http://hits.dwyl.io/ALinuxPerson/badges.svg)](http://hits.dwyl.io/ALinuxPerson/badges)
 
-![product-library](https://i.imgur.com/OiStRrR.png) ![product-notfication](https://i.imgur.com/ObQiICf.png) ![product-wall](https://i.imgur.com/WX92wi6.png)
+![product-library](https://i.imgur.com/9ztbONM.png) ![product-notfication](https://i.imgur.com/6oWvzV4.png) ![product-wall](https://i.imgur.com/Xps47Xa.png)
 
 oom-notifier is a program and a library used to track oom scores for Linux.
 
