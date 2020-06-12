@@ -48,4 +48,4 @@ def main():
         pid, oom_score = tuple(oom.max.items())[0]
         if oom_score > config.threshold:
             notify(pid, oom_score, config.threshold)
-        time.sleep(config.wait_time)
+        time.sleep(config.wait_time if config.wait_time > 0 else 5)
