@@ -32,8 +32,7 @@ def notify(pid: int, oom_score: int, threshold: int):
             app_name="OOM Notifier"
         )
     except dbus.exceptions.DBusException:
-        command: List[str] = ["wall"]
-        command.extend(message.split())
+        command: List[str] = ["wall"] + message.split()
         subprocess.call(command)
 
 def fork():
