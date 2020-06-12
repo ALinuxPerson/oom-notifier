@@ -42,10 +42,20 @@ def fork():
     if os.fork():
         sys.exit()
 
+def to_high_priority() -> bool:
+    try:
+        os.nice(-20)
+        return True
+    except PermissionError:
+        return False
+
 def main():
     fork()
     oom: oom_notifier.OOM = oom_notifier.OOM()
     config: oom_notifier.utils.Configuration = oom_notifier.utils.Configuration()
+    if not to_high_priority():
+        print("info: if you want oom-notifier to run with the highest priority, run this command again as root. if "
+              "you get a DistributionNotFound error, it means you need to reinstall oom-notifier as root.")
     print("oom-notifier is now active and running in the background!")
     while True:
         pid, oom_score = tuple(oom.max.items())[0]
