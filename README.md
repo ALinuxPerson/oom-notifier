@@ -13,6 +13,10 @@
 [![GitHub pull-requests closed](https://img.shields.io/github/issues-pr-closed/ALinuxPerson/oom-notifier.svg)](https://GitHub.com/ALinuxPerson/oom-notifier/pull/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![HitCount](http://hits.dwyl.io/ALinuxPerson/badges.svg)](http://hits.dwyl.io/ALinuxPerson/badges)
+[![PyPI download week](https://img.shields.io/pypi/dw/oom-notifier.svg)](https://pypi.python.org/pypi/oom-notifier/)
+[![PyPI version shields.io](https://img.shields.io/pypi/v/oom-notifier.svg)](https://pypi.python.org/pypi/oom-notifier/)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/oom-notifier.svg)](https://pypi.python.org/pypi/oom-notifier/)
+[![PyPI implementation](https://img.shields.io/pypi/implementation/oom-notifier.svg)](https://pypi.python.org/pypi/oom-notifier/)
 
 ![product-library](https://i.imgur.com/9ztbONM.png) ![product-notfication](https://i.imgur.com/6oWvzV4.png) ![product-wall](https://i.imgur.com/Xps47Xa.png)
 
