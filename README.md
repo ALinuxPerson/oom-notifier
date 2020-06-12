@@ -97,4 +97,4 @@ you can install using your distribution's package manager.
 
 ## License
 
-This project is licensed under the [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/) License - see the LICENSE file for details
+This project is licensed under the [GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/) License - see the [LICENSE](https://github.com/ALinuxPerson/oom-notifier/blob/master/LICENSE) file for details
