@@ -28,6 +28,13 @@ oom-notifier gets the oom score of each process by getting the `/proc/<PID>/oom_
 the oom scores of each process (by default) every 5 seconds and the threshold is set to 1000. If you want to change these
 values, refer to the configuration header below.
 
+But what is an `oom_score`?
+
+An `oom_score` is basically a score assigned to a process by the Linux kernel which is the likelihood that a process will
+be terminated in case a computer is out of memory. If a process oom score is high, it means it will be one of the first processes to be killed in case
+of low memory resources. If a process oom score is low, it means it will be the least likely to be killed in case of low memory
+resources.
+
 ## Getting Started
 
 ### Dependencies
