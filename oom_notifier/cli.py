@@ -33,7 +33,10 @@ def notify(pid: int, oom_score: int, threshold: int):
         )
     except dbus.exceptions.DBusException:
         command: List[str] = ["wall"] + message.split()
-        subprocess.call(command)
+        try:
+            subprocess.call(command)
+        except FileNotFoundError:
+            print(message)
 
 def fork():
     if os.fork():
